@@ -1,0 +1,375 @@
+.menu-btn {
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    /* Garante que o botão esteja acima do conteúdo */
+}
+
+.btn-line {
+    width: 24px;
+    height: 3px;
+    background-color: #fff;
+    border: 1px solid;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(39, 39, 39);
+    /* Fundo escuro semi-transparente */
+    z-index: 999;
+    /* Garante que o menu esteja acima do conteúdo */
+    padding-top: 77px;
+    /* Ajusta o padding para alinhar os itens do menu */
+    box-sizing: border-box;
+}
+
+.navbar-menu.active {
+    display: block;
+}
+
+.navbar-menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    transition: 0.4s;
+}
+
+.navbar-menu a:hover {
+    background-color: #555;
+}
+
+.logo {
+    text-align: center;
+}
+
+#logo {
+    width: 150px;
+    margin-top: .1rem;
+}
+
+/*  */
+
+#block1 {
+    background-color: black;
+    width: 20rem;
+    border-radius: 1rem;
+    color: white;
+    margin-right: 1rem;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    padding: 0 2rem;
+}
+
+#block1 article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 22rem;
+}
+
+#block1_img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+}
+
+#block1 img {
+    width: 9rem;
+}
+
+.block2 {
+    height: 35rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#block2 img {
+    max-width: 100px;
+    width: 100%;
+}
+
+#block2:nth-child(2) {
+    margin: 0 1rem;
+}
+
+#block2 a {
+    font-size: 1.5rem;
+    background-color: black;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 1rem;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: .25s ease-in-out;
+    cursor: pointer;
+}
+
+#block2 a:hover {
+    transform: scale(1.2);
+    border: 1px solid white;
+}
+
+#block2 p {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+#container_block {
+    display: flex;
+    justify-content: center;
+}
+
+/*  */
+
+#calendar {
+    width: 800px;
+}
+
+.month {
+    margin-bottom: 40px;
+}
+
+.month-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.days-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day {
+    flex-basis: calc(100% / 7 - 0px);
+    height: 100px;
+    text-align: center;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.today {
+    background-color: #ffff00;
+}
+
+.event {
+    position: relative;
+    cursor: pointer;
+}
+
+/* .event:before {
+    content: '!';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+} */
+
+.day-of-week {
+    font-size: 14px;
+    font-weight: bold;
+    height: auto;
+}
+
+.month {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container {
+    padding: 1% 15% 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column
+}
+
+h2 {
+    margin-bottom: 2rem;
+}
+
+.menu2-perf {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0 0 0;
+}
+
+.menu2-perf1 {
+    background-color: #fff;
+    width: 30rem;
+    /* border: 1px solid; */
+}
+
+.menu2-perf1 article {
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dados {
+    margin-top: .5rem;
+    width: 100%;
+    height: .5rem;
+    border: 1px solid;
+}
+
+.dados0 {
+    height: .5rem;
+    background-color: black;
+}
+
+.menu2-perf hr {
+    display: none;
+}
+
+@media screen and (max-width: 990px) {
+    .menu2-perf hr {
+        display: flex;
+        width: 30rem;
+        margin: 2rem 0;
+    }
+
+    .menu2-perf {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 6rem;
+    }
+
+
+    .block2 {
+        transform: scale(.8);
+    }
+}
+
+@media screen and (max-width: 820px) {
+    #calendar {
+        transform: scale(.8);
+        top: 10rem;
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    #calendar {
+        transform: scale(.6);
+        top: 6rem;
+        position: absolute;
+    }
+}
+
+
+@media screen and (max-width: 628px) {
+    #calendar {
+        transform: scale(.6);
+        top: 5rem;
+        position: absolute;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 628px) {
+    #calendar {
+        transform: scale(.55);
+        top: 3.5rem;
+        position: absolute;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .menu2-perf hr {
+        display: flex;
+        width: 100vw;
+        margin: 2rem 0;
+    }
+
+    .menu2-perf1 {
+        max-width: 100rem;
+        width: 100%;
+    }
+
+    .menu2-perf {
+        margin: 0 2rem 4rem;
+    }
+
+    .menu2-perf {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .block2 {
+        transform: scale(.8);
+    }
+
+    .menu2-perf1:nth-child(3) {
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 471px) {
+    #calendar {
+        transform: scale(.51);
+        top: 2.8rem;
+        position: absolute;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 436px) {
+    #calendar {
+        transform: scale(.45);
+        top: 1.2rem;
+        position: absolute;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .day {
+        border: 2px solid rgba(0, 0, 0, 0.425);
+        font-size: 1rem;
+    }
+}

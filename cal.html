@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worldskills Paraíba</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/menu.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="menu-btn" id="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <div class="navbar-menu" id="navbar-menu">
+            <a href="./menu.html">Menu da Worldskils</a>
+            <a href="./tec.html">Acessar Resultados</a>
+            <a href="./cal.html">Agenda</a>
+            <a href="./menu2.html">Perfil do Competidor</a>
+            <a href="./index.html">Sair</a>
+        </div>
+    </div>
+    <div class="logo">
+        <a href="./index_login.html">
+            <img id="logo" src="./img/LOGO NEGATIVA.png" alt="">
+        </a>
+    </div>
+    <div class="container">
+        <h2 class="">Agenda de Provas e Eventos</h2>
+        <div id="calendar">
+            <div class="mouth">
+
+            </div>
+        </div>
+    </div>
+    <a href="./menu.html" class="setas" title="Voltar?">
+        <img src="./img/300ppi/Ativo 49.png" alt="">
+    </a>
+    <style>
+        .setas {
+            position: fixed;
+            z-index: 99;
+            bottom: 0;
+            right: 0;
+            border: 0;
+            width: 3rem;
+            margin: 1rem 1rem;
+        }
+
+        .setas img {
+            width: 3rem;
+        }
+    </style>
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            var menu = document.getElementById('navbar-menu');
+            menu.classList.toggle('active');
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const calendar = document.getElementById('calendar');
+
+            function updateCalendar() {
+                calendar.innerHTML = ''; // Limpa o conteúdo do calendário
+
+                const today = new Date();
+                const currentMonth = today.getMonth();
+                const currentYear = today.getFullYear();
+
+                const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+                const monthDiv = document.createElement('div');
+                monthDiv.classList.add('month');
+
+                const monthName = document.createElement('div');
+                monthName.classList.add('month-name');
+                const monthNameText = new Intl.DateTimeFormat('pt-BR', { month: 'long' }).format(today);
+                monthName.textContent = monthNameText.charAt(0).toUpperCase() + monthNameText.slice(1); // Capitaliza a primeira letra do mês
+                monthDiv.appendChild(monthName);
+
+                // Adicionar dias da semana na ordem desejada
+                const weekdays = ['Sábado', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Domingo'];
+                const daysContainer = document.createElement('div');
+                daysContainer.classList.add('days-container');
+                weekdays.forEach(weekday => {
+                    const weekdayDiv = document.createElement('div');
+                    weekdayDiv.classList.add('day');
+                    weekdayDiv.classList.add('day-of-week');
+                    weekdayDiv.textContent = weekday;
+                    daysContainer.appendChild(weekdayDiv);
+                });
+
+                // Adicionar espaços para ajustar o início da semana
+                for (let i = 0; i < new Date(currentYear, currentMonth, 1).getDay(); i++) {
+                    const emptyDayDiv = document.createElement('div');
+                    emptyDayDiv.classList.add('day');
+                    daysContainer.appendChild(emptyDayDiv);
+                }
+
+                for (let j = 1; j <= daysInMonth; j++) {
+                    const dayDiv = document.createElement('div');
+                    dayDiv.classList.add('day');
+                    dayDiv.textContent = j;
+
+                    if (j === today.getDate()) {
+                        dayDiv.classList.add('today');
+                    }
+
+                    // Adicione lembretes em alguns dias específicos
+                    if (j === 5 || j === 15 || j === 25) {
+                        const eventDiv = document.createElement('div');
+                        eventDiv.classList.add('event');
+                        eventDiv.setAttribute('data-day', j);
+                        dayDiv.appendChild(eventDiv);
+                    }
+
+                    daysContainer.appendChild(dayDiv);
+                }
+
+                monthDiv.appendChild(daysContainer);
+                calendar.appendChild(monthDiv);
+
+                // Adicionar um ouvinte de evento para os lembretes
+                const events = document.querySelectorAll('.event');
+                events.forEach(event => {
+                    event.addEventListener('click', function () {
+                        const day = event.getAttribute('data-day');
+                        alert(`Lembrete para o dia ${day}`);
+                    });
+                });
+            }
+
+            // Atualiza o calendário quando a página é carregada
+            updateCalendar();
+
+            // Atualiza o calendário a cada minuto
+            setInterval(updateCalendar, 60000); // 60000 milissegundos = 1 minuto
+        });
+
+
+    </script>
+</body>
+
+</html>

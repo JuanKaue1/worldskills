@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="banner">
+            <img src="./img/300ppi/LOGO POSITIVA.png" alt="" class="logo">
+        </div>
+        <div class="bg">
+        </div>
+
+        <div class="form" id="login-form">
+            <h2>LOGIN</h2>
+            <input type="text" id="usuario" name="usuario" placeholder="Usuário" required>
+            <input type="password" id="senha" name="senha" placeholder="Senha" required>
+
+            <input type="submit" value="Entrar" onclick="validateLogin()">
+            <!-- <span><a href="./cadastro.html">Não tem login? Cadastre-se</a></span> -->
+        </div>
+    </div>
+    <a href="./index.html" class="setas" title="Voltar">
+        <img src="./img/300ppi/Ativo 49.png" alt="">
+    </a>
+    <style>
+        @media screen and (max-width: 1100px) {
+
+            .banner,
+            .bg {
+                display: none;
+            }
+
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .setas {
+            position: absolute;
+            z-index: 99;
+            top: 0;
+            right: 0;
+            border: 0;
+            width: 3rem;
+            margin: 3rem 5rem;
+        }
+
+        .setas img {
+            width: 3rem;
+        }
+    </style>
+    <script>
+        function validateLogin() {
+            var emailInput = document.getElementById("usuario").value;
+            var senhaInput = document.getElementById("senha").value;
+
+            // Verifica se o email é institucional e a senha é "12345"
+            var emailPattern = /@(pb\.docente\.senai\.br|fiepb\.org\.br|aluno\.senai\.br)$/;
+            if (emailPattern.test(emailInput) && senhaInput === "34678") {
+                // Email e senha válidos, redireciona para menu.html
+                window.location.href = "./menu.html";
+            } else {
+                // Email ou senha inválidos, exibir mensagem de erro
+                alert("Por favor, insira um email institucional e uma senha válida.");
+            }
+        }
+    </script>
+</body>
+
+</html>

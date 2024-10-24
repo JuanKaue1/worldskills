@@ -1,0 +1,130 @@
+.menu-btn {
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    /* Garante que o botão esteja acima do conteúdo */
+}
+
+.btn-line {
+    width: 24px;
+    height: 3px;
+    background-color: #fff;
+    border: 1px solid;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(39, 39, 39);
+    /* Fundo escuro semi-transparente */
+    z-index: 999;
+    /* Garante que o menu esteja acima do conteúdo */
+    padding-top: 77px;
+    /* Ajusta o padding para alinhar os itens do menu */
+    box-sizing: border-box;
+}
+
+.navbar-menu.active {
+    display: block;
+}
+
+.navbar-menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    transition: 0.4s;
+}
+
+.navbar-menu a:hover {
+    background-color: #555;
+}
+
+.logo {
+    text-align: center;
+}
+
+#logo {
+    width: 150px;
+    margin-top: .1rem;
+}
+
+/*  */
+
+#block1 {
+    background-color: black;
+    width: 20rem;
+    border-radius: 1rem;
+    color: white;
+    margin-right: 1rem;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    padding: 0 2rem;
+}
+
+#block1 article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 22rem;
+}
+
+#block1_img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+}
+
+#block1 img {
+    width: 9rem;
+}
+
+.block2 {
+    height: 35rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#block2 img {
+    max-width: 5rem;
+    width: 100%;
+}
+
+#block2 {
+    background-color: black;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 1rem;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#block2 p {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+#container_block {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Competidor - WorldSkills Paraíba</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/menu.css">
+
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .header {
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        .navbar-menu a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .logo img {
+            width: 150px;
+        }
+
+        /* Estilo do perfil */
+        .perfil-aluno {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            position: relative;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+
+        .perfil-aluno.hidden {
+            opacity: 0;
+        }
+
+        .perfil-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .perfil-foto {
+            flex: 1;
+            text-align: center;
+        }
+
+        .perfil-foto img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #000000;
+        }
+
+        .perfil-detalhes {
+            flex: 2;
+            padding-left: 20px;
+        }
+
+        .perfil-detalhes p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .perfil-detalhes strong {
+            color: #000000;
+        }
+
+        .habilidades {
+            background-color: #000000;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .habilidades.hidden {
+            opacity: 0;
+        }
+
+        .habilidades h3 {
+            margin-top: 0;
+        }
+
+        .habilidades ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .habilidades ul li {
+            font-size: 16px;
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .habilidades ul li::before {
+            content: '✓';
+            color: #00cc66;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Estilo das setas de navegação */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0);
+            border: none;
+            font-size: 2rem;
+            padding: 10px 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .arrow-left {
+            left: -60px;
+            transform: rotate(90deg);
+            background: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 256 256'%3E%3Cpolygon points='225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093' fill='%23333'%3E%3C/polygon%3E%3C/svg%3E");
+        }
+
+        .arrow-right {
+            right: -60px;
+            transform: rotate(-90deg);
+            background: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 256 256'%3E%3Cpolygon points='225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093' fill='%23333'%3E%3C/polygon%3E%3C/svg%3E");
+        }
+
+        .perfil-aluno,
+        .habilidades {
+            transform: scale(1);
+        }
+
+        @media screen and (max-width: 1400px) {
+
+            .ddd2ds {
+                transform: scale(.7);
+                bottom: 7rem;
+                position: relative;
+            }
+        }
+
+        @media screen and (max-width: 451px) {
+            .perfil-container {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            body {
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+<a href="./menu.html" class="setas" title="Voltar?">
+    <img src="./img/300ppi/Ativo 49.png" alt="">
+</a>
+<style>
+    .setas {
+        position: fixed;
+        z-index: 99;
+        bottom: 0;
+        right: 0;
+        border: 0;
+        width: 3rem;
+        margin: 1rem 1rem;
+    }
+
+    .setas img {
+        width: 3rem;
+    }
+</style>
+<body>
+    <div class="header">
+        <div class="menu-btn" id="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <div class="navbar-menu" id="navbar-menu">
+            <a href="./menu.html">Menu da Worldskills</a>
+            <a href="./tec.html">Acessar Resultados</a>
+            <a href="./cal.html">Agenda</a>
+            <a href="./menu2.html">Perfil do Competidor</a>
+            <a href="./index.html">Sair</a>
+        </div>
+    </div>
+
+    <div class="logo">
+        <a href="./index_login.html">
+            <img id="logo" src="./img/LOGO NEGATIVA.png" alt="Logo WorldSkills">
+        </a>
+    </div>
+    <div class="ddd2ds">
+        <!-- Seção do Perfil do Competidor -->
+        <div class="perfil-aluno" id="perfil-aluno">
+            <h2 style="color: #000000; text-align: center;">Perfil do Competidor</h2>
+            <div class="perfil-container">
+                <div class="perfil-foto">
+                    <img src="" alt="Foto do Competidor" id="foto-competidor">
+                </div>
+                <div class="perfil-detalhes">
+                    <p><strong>Competidor:</strong> </p>
+                    <p><strong>Treinador:</strong> </p>
+                    <p><strong>Unidade:</strong> </p>
+                    <p><strong>Idade:</strong> </p>
+                    <p><strong>Entrada na WorldSkills:</strong> </p>
+                    <p><strong>Competência:</strong> </p>
+                    <p><strong>Colocação:</strong> </p>
+                    <p><strong>Prêmios:</strong> </p>
+                </div>
+            </div>
+            <!-- Botões de navegação -->
+            <button class="nav-arrow arrow-left" onclick="mostrarCompetidor(-1)">
+                ←
+            </button>
+            <button class="nav-arrow arrow-right" onclick="mostrarCompetidor(1)">
+                →
+            </button>
+        </div>
+
+        <div class="habilidades">
+            <h3>Habilidades do Competidor</h3>
+            <ul>
+                <li>Leitura e interpretação de desenhos técnicos</li>
+                <li>Conhecimento em manutenção preventiva e corretiva</li>
+                <li>Soldagem e usinagem</li>
+                <li>Operação e manutenção de sistemas hidráulicos e pneumáticos</li>
+                <li>Habilidade com ferramentas de medição e controle de qualidade</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            var menu = document.getElementById('navbar-menu');
+            menu.classList.toggle('active');
+        });
+
+        // Dados dos competidores
+        const competidores = [
+            {
+                competidor: " Alessandro Gomes",
+                treinador: " Carlos Alberto",
+                unidade: " Stenio Lopes",
+                idade: " 23",
+                ano: " 2024",
+                competencia: " #57 – Manufatura Aditiva",
+                colocacao: " ---",
+                premios: " ---",
+                foto: "./img/Alessandro Gomes.jpg",
+                habilidades: ["Conhecimento técnico avançado", "Resolução de problemas", "Trabalho sob pressão", "Atenção aos detalhes", "Adaptabilidade"]
+            },
+            {
+                competidor: " Carlos Eduardo",
+                treinador: " Rafael de Oliveira",
+                unidade: " Odilon Ribeiro Coutinho",
+                idade: " 19",
+                ano: " 2024",
+                competencia: " #48 - Indústria  4.0",
+                colocacao: " ---",
+                premios: " ---",
+                foto: "./img/Carlos Eduardo dos Santos Guedes.jpg",
+                habilidades: ["Internet das Coisas", "Automação e Robótica", "Análise de Big Data", "Manufatura Aditiva (Impressão 3D)", "Integração de Sistemas"]
+            },
+            {
+                competidor: " Dayana Alves",
+                treinador: " Grayce Farias",
+                unidade: " Odilon Ribeiro Coutinho",
+                idade: " 19",
+                ano: " 2024",
+                competencia: " #31 - Tecnologia da moda",
+                colocacao: " ---",
+                premios: " ---",
+                foto: "./img/Dayana Alves da Silva.jpg",
+                habilidades: ["Tecidos inteligentes e vestíveis (wearables)", "Impressão 3D", "Realidade Aumentada (AR) e Realidade Virtual (VR)", "Inteligência Artificial (IA) e Big Data", "Moda sustentável"]
+            },
+            {
+                competidor: " Edmilson João",
+                treinador: " Erivan",
+                unidade: " Odilon Ribeiro Coutinho",
+                idade: " 17",
+                ano: " 2024",
+                competencia: " #46 - Indústria 4.0",
+                colocacao: " ---",
+                premios: " ---",
+                foto: "./img/Edmilson João.jpg",
+                habilidades: ["Internet das Coisas (IoT)", "Automação e Sistemas Ciberfísicos", "Big Data e Análise de Dados", "Inteligência Artificial (IA) e Machine Learning", "Computação em Nuvem e Edge Computing"]
+            },
+            {
+                competidor: " Gustavo Coutinho",
+                treinador: " Igor",
+                unidade: " Odilon Ribeiro Coutinho",
+                idade: " 18",
+                ano: " 2024",
+                competencia: " #23 - Robótica ",
+                colocacao: " ---",
+                premios: " ---",
+                foto: "./img/Gustavo Coutinho.jpg",
+                habilidades: ["Mecânica", "Eletrônica", "Sensores", "Inteligência Artificial (IA)", "Controle e Automação"]
+            },
+            {
+                "competidor": "Izak Araújo",
+                "treinador": "Leonardo Santana",
+                "unidade": "José William Lemos Leal",
+                "idade": 20,
+                "ano": 2022,
+                "competencia": "#12 - Revestimento cerâmico",
+                "colocacao": "1° lugar no Nordeste e 6º lugar no Brasil",
+                "premios": "---",
+                "foto": "./img/Izak Araújo Souza.jpg",
+                "habilidades": [
+                    "Preparação da superfície para aplicação de revestimento",
+                    "Corte e assentamento de cerâmicas com precisão",
+                    "Interpretação de projetos e desenhos técnicos",
+                    "Aplicação de argamassa e rejunte",
+                    "Execução de acabamentos e alinhamentos precisos"
+                ]
+            },
+            {
+                "competidor": "Joalysson Soares",
+                "treinador": "Rafael de Oliveira",
+                "unidade": "Odilon Ribeiro Coutinho",
+                "idade": 17,
+                "ano": 2024,
+                "competencia": "#48 - Indústria 4.0",
+                "colocacao": "---",
+                "premios": "---",
+                "foto": "./img/Joalysson Soares Correia.jpg",
+                "habilidades": [
+                    "Automação de processos industriais",
+                    "Análise de dados em tempo real",
+                    "Integração de sistemas ciberfísicos",
+                    "Manutenção de sistemas de robótica industrial",
+                    "Implementação de IoT em ambiente de manufatura"
+                ]
+            },
+            {
+                "competidor": "Juan Kauê",
+                "treinador": "Michel Araújo",
+                "unidade": "Stenio Lopes",
+                "idade": 19,
+                "ano": 2022,
+                "competencia": "#17 - Tecnologia Web",
+                "colocacao": "---",
+                "premios": "---",
+                "foto": "./img/Juan.jpg",
+                "habilidades": [
+                    "Desenvolvimento de sites responsivos com HTML, CSS e JavaScript",
+                    "Integração de APIs em aplicações web",
+                    "Otimização de desempenho para SEO e acessibilidade",
+                    "Criação de interfaces dinâmicas utilizando frameworks JS",
+                    "Versionamento de código com Git e GitHub"
+                ]
+            },
+            {
+                "competidor": "Luan Guilherme",
+                "treinador": "Geivison",
+                "unidade": "Odilon Ribeiro Coutinho",
+                "idade": 20,
+                "ano": 2024,
+                "competencia": "#19 - Instalações Elétricas",
+                "colocacao": "---",
+                "premios": "---",
+                "foto": "./img/Luan Guilherme.jpg",
+                "habilidades": [
+                    "Instalação de sistemas elétricos residenciais e industriais",
+                    "Leitura e interpretação de esquemas elétricos",
+                    "Dimensionamento de circuitos e proteção elétrica",
+                    "Manutenção preventiva e corretiva de instalações elétricas",
+                    "Configuração de sistemas de automação residencial"
+                ]
+            },
+            {
+                "competidor": "Monalisa Vitória",
+                "treinador": "Cláviano Sousa",
+                "unidade": "Stenio Lopes",
+                "idade": 20,
+                "ano": 2022,
+                "competencia": "#40 - Design Gráfico",
+                "colocacao": "1º lugar no Nordeste e 5º lugar no Brasil",
+                "premios": "Certificado Adobe",
+                "foto": "./img/5.png",
+                "habilidades": [
+                    "Criação de layouts gráficos em Adobe Illustrator",
+                    "Edição e manipulação de imagens no Adobe Photoshop",
+                    "Desenvolvimento de identidade visual",
+                    "Produção de peças publicitárias digitais e impressas",
+                    "Aplicação de técnicas de tipografia e composição visual"
+                ]
+            },
+            {
+                "competidor": "Pedro Severino",
+                "treinador": "Linniker",
+                "unidade": "Odilon Ribeiro Coutinho",
+                "idade": 18,
+                "ano": 2024,
+                "competencia": "#05 - Desenho Mecânico CAD",
+                "colocacao": "---",
+                "premios": "---",
+                "foto": "./img/Pedro Severino.jpg",
+                "habilidades": [
+                    "Criação de modelos 3D utilizando software CAD",
+                    "Interpretação de desenhos técnicos e projetos mecânicos",
+                    "Dimensionamento de componentes e peças mecânicas",
+                    "Desenvolvimento de protótipos digitais",
+                    "Simulação e análise de estruturas em CAD"
+                ]
+            },
+            {
+                "competidor": "Pedro Henrique",
+                "treinador": "Carlos Alberto",
+                "unidade": "Stenio Lopes",
+                "idade": 21,
+                "ano": 2021,
+                "competencia": "#57 - Manufatura Aditiva",
+                "colocacao": "---",
+                "premios": "---",
+                "foto": "./img/Pedro Henrique Gomes de Oliveira.jpg",
+                "habilidades": [
+                    "Modelagem 3D para impressão em manufatura aditiva",
+                    "Operação de impressoras 3D de diferentes tecnologias",
+                    "Seleção de materiais apropriados para impressão 3D",
+                    "Otimização de parâmetros de impressão para qualidade e eficiência",
+                    "Manutenção e calibração de equipamentos de manufatura aditiva"
+                ]
+            }];
+
+        let index = 0;
+
+        function atualizarPerfil() {
+            const competidor = competidores[index];
+
+            // Atualizar foto do competidor
+            const foto = competidor.foto || './img/default.png';
+            document.getElementById("foto-competidor").src = foto;
+
+            // Atualizar detalhes do competidor
+            const perfilDetalhes = document.querySelector('.perfil-detalhes');
+            perfilDetalhes.innerHTML = `
+                <p><strong>Competidor:</strong> ${competidor.competidor}</p>
+                <p><strong>Treinador:</strong> ${competidor.treinador}</p>
+                <p><strong>Unidade:</strong> ${competidor.unidade}</p>
+                <p><strong>Idade:</strong> ${competidor.idade}</p>
+                <p><strong>Entrada na WorldSkills:</strong> ${competidor.ano}</p>
+                <p><strong>Competência:</strong> ${competidor.competencia}</p>
+                <p><strong>Colocação:</strong> ${competidor.colocacao}</p>
+                <p><strong>Prêmios:</strong> ${competidor.premios}</p>
+            `;
+
+            // Atualizar habilidades
+            const habilidadesList = document.querySelector('.habilidades ul');
+            habilidadesList.innerHTML = competidor.habilidades.map(habilidade => `<li>${habilidade}</li>`).join('');
+        }
+
+        // function mostrarCompetidor(direcao) {
+        //     index += direcao;
+        //     if (index < 0) index = competidores.length - 1;
+        //     if (index >= competidores.length) index = 0;
+        //     atualizarPerfil();
+        // }
+
+        // function mostrarCompetidor(direcao) {
+        //     const perfilAluno = document.getElementById('perfil-aluno');
+        //     perfilAluno.classList.add('hidden'); // Adiciona a classe hidden
+
+        //     setTimeout(() => {
+        //         index += direcao;
+        //         if (index < 0) index = competidores.length - 1;
+        //         if (index >= competidores.length) index = 0;
+        //         atualizarPerfil();
+        //         perfilAluno.classList.remove('hidden'); // Remove a classe hidden para mostrar novamente
+        //     }, 500); // Tempo que deve ser igual ao da transição CSS (0.5s)
+        // }
+
+
+        function mostrarCompetidor(direcao) {
+            const perfilAluno = document.getElementById('perfil-aluno');
+            const habilidades = document.querySelector('.habilidades');
+
+            perfilAluno.classList.add('hidden'); // Adiciona a classe hidden
+            habilidades.classList.add('hidden'); // Adiciona a classe hidden para habilidades
+
+            setTimeout(() => {
+                index += direcao;
+                if (index < 0) index = competidores.length - 1;
+                if (index >= competidores.length) index = 0;
+
+                atualizarPerfil();
+
+                perfilAluno.classList.remove('hidden'); // Remove a classe hidden para mostrar novamente
+                habilidades.classList.remove('hidden'); // Remove a classe hidden para mostrar novamente
+            }, 500); // Tempo que deve ser igual ao da transição CSS (0.5s)
+        }
+
+        // Preload das imagens
+        competidores.forEach(competidor => {
+            const img = new Image();
+            img.src = competidor.foto;
+        });
+
+        // Inicializar com o primeiro competidor
+        window.onload = atualizarPerfil;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worldskills Paraíba</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/menu3.css">
+</head>
+
+<body>
+    <style>
+        #dados1 {
+            width: 50%;
+        }
+
+        #dados2 {
+            width: 90%;
+        }
+
+        #dados3 {
+            width: 30%;
+        }
+
+        #dados4 {
+            width: 80%;
+        }
+
+        #dados5 {
+            width: 10%;
+        }
+    </style>
+    <style>
+        .dropbtn {
+            background-color: black;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 1rem;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid rgb(0, 0, 0);
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        caption {
+            caption-side: bottom;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        thead,
+        tfoot {
+            color: white;
+            background-color: rgb(0, 0, 0);
+        }
+
+        th,
+        td {
+            border: 1px solid rgb(0, 0, 0);
+            padding: 8px 10px;
+        }
+
+        td:last-of-type {
+            text-align: center;
+        }
+    </style>
+    <style>
+        /* Estilos para a tabela */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            border: 1px solid #000000;
+            text-align: left;
+            color: black;
+            text-align: center;
+        }
+
+        th {
+            text-align: center;
+            color: white;
+            background-color: #000000;
+        }
+    </style>
+    <div class="header">
+        <div class="menu-btn" id="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <div class="navbar-menu" id="navbar-menu">
+            <a href="./menu.html">Menu da Worldskils</a>
+            <a href="./tec.html">Acessar Resultados</a>
+            <a href="./cal.html">Agenda</a>
+            <a href="./menu2.html">Perfil do Competidor</a>
+            <a href="./index.html">Sair</a>
+        </div>
+    </div>
+    <div class="logo">
+        <a href="./index_login.html">
+            <img id="logo" src="./img/LOGO NEGATIVA.png" alt="">
+        </a>
+    </div>
+    <div class="menu2-perf">
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Manufatura Aditiva ▼</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="./menu2-1.html">Manufatura Aditiva</a>
+                <a href="./menu2-2.html">Tecnologia da moda</a>
+                <a href="./menu2-3.html">Robótica</a>
+                <a href="./menu2-4.html">Aplicação de Revestimentos Cerâmicos</a>
+                <a href="./menu2-5.html">Indústria 4.0</a>
+                <a href="./menu2-6.html">Tecnologia Web</a>
+                <a href="./menu2-7.html">Instalações Elétricas</a>
+                <a href="./menu2-8.html">Design Gráfico</a>
+                <a href="./menu2-9.html">Desenho Mecânico CAD</a>
+                <a href="./menu2-10.html">Manufatura Aditiva</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+    <a href="./menu.html" class="setas" title="Voltar?">
+        <img src="./img/300ppi/Ativo 49.png" alt="">
+    </a>
+    <style>
+        .setas {
+            position: fixed;
+            z-index: 99;
+            bottom: 0;
+            right: 0;
+            border: 0;
+            width: 3rem;
+            margin: 1rem 1rem;
+        }
+
+        .setas img {
+            width: 3rem;
+        }
+    </style>
+    <div class="menu2-perf">
+        <div class="menu2-perf1">
+            <article style="margin-top: 1rem; font-size: 1.3rem;">
+                <span style="margin-top: 1rem;">
+                    <h4>Competidor:</h4>
+                    <p>Alessandro Gomes</p>
+                </span>
+                <span style="margin-top: 1rem;">
+                    <h4>Treinador:</h4>
+                    <p> Carlos Alberto</p>
+                </span>
+                <span style="margin-top: 1rem;">
+                    <h4>Unidade:</h4>
+                    <p>Stenio Lopes</p>
+                </span>
+                <span style="margin-top: 1rem;">
+                    <h4>Ocupação:</h4>
+                    <p>#57 – Manufatura Aditiva</p>
+                </span>
+                <span style="margin-top: 1rem; font-size: 1.1rem;">
+                    <p>A manufatura aditiva abrange tecnologias que permitem a criação de objetos a partir de um modelo virtual. Nesse formato, os itens são criados a partir da adição de materiais em camadas. Esses materiais podem ser filamentos de polímeros ou metais, por exemplo.</p>
+                </span>
+            </article>
+        </div>
+        <div class="menu2-perf1" style=" display: block; flex-direction: column;">
+            <h3 style="margin-top: 2rem;">PONTUAÇÃO DOS COMPETIDORES</h3>
+
+            <canvas id="meuGrafico" style="margin-top: 1rem;"></canvas>
+
+            <table id="myTable">
+                <thead>
+                    <tr>
+                        <th>Competidores</th>
+                        <th>Treinador</th>
+                        <th>Simulados</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aqui os dados serão preenchidos dinamicamente pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Dados para a tabela
+            var data = [
+                { nome: "Alessandro Gomes",  idade: "Carlos Alberto", ass: "78"},
+                { nome: "Leticia H",       idade: "Carlos Alberto", ass: "90"},
+                { nome: "Eduardo L",     idade: "Carlos Alberto", ass: "81"},
+                { nome: "Caio P",     idade: "Carlos Alberto", ass: "67"},
+            ];
+
+            // Função para preencher a tabela
+            function populateTable(data) {
+                var tableBody = document.querySelector("#myTable tbody");
+
+                // Limpa o conteúdo anterior
+                tableBody.innerHTML = '';
+
+                // Preenche a tabela com os novos dados
+                data.forEach(function (item) {
+                    var row = tableBody.insertRow();
+                    row.insertCell(0).textContent = item.nome;
+                    row.insertCell(1).textContent = item.idade;
+                    row.insertCell(2).textContent = item.ass;
+                });
+            }
+
+            // Chama a função para preencher a tabela com os dados iniciais
+            populateTable(data);
+        });
+
+
+
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            var menu = document.getElementById('navbar-menu');
+            menu.classList.toggle('active');
+        });
+
+
+        // Dados do gráfico
+        var dados = {
+            labels: [
+                'Alessandro Gomes',
+                'Leticia H',
+                'Eduardo L',
+                'Caio P'
+            ],
+            datasets: [{
+                label: 'Mundial',
+                data: [69, 0, 70, 0],
+                backgroundColor: [
+                    'Green',
+                ],
+                hoverOffset: 4
+            }, {
+                label: 'Nacional',
+                data: [90, 0, 80, 55],
+                backgroundColor: [
+                    'Red',
+                ],
+                hoverOffset: 4
+            }, {
+                label: 'Estadual',
+                data: [79, 69, 78, 70],
+                backgroundColor: [
+                    'blue',
+                ],
+                hoverOffset: 4
+            }
+            ]
+        };
+
+        // Configurações do gráfico
+        const config = {
+            type: 'bar',
+            data: dados,
+            options: {
+
+            }
+        };
+        // Renderizar o gráfico
+        var meuGrafico = new Chart(
+            document.getElementById('meuGrafico'),
+            config
+        );
+
+
+    </script>
+</body>
+
+</html>

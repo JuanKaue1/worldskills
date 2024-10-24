@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worldskills Paraíba</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <style>
+        .menu-btn {
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            /* Garante que o botão esteja acima do conteúdo */
+        }
+
+        .btn-line {
+            width: 24px;
+            height: 3px;
+            background-color: #fff;
+            border: 1px solid;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Fundo escuro semi-transparente */
+            z-index: 999;
+            /* Garante que o menu esteja acima do conteúdo */
+            padding-top: 77px;
+            /* Ajusta o padding para alinhar os itens do menu */
+            box-sizing: border-box;
+        }
+
+        .navbar-menu.active {
+            display: block;
+        }
+
+        .navbar-menu a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 20px;
+            transition: 0.4s;
+        }
+
+        .navbar-menu a:hover {
+            background-color: #555;
+        }
+
+        #scrollToTopBtn {
+            display: none;
+            top: 95%;
+            position: fixed;
+            bottom: 25px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            background-color: black;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            outline: none;
+            transition: opacity 0.3s;
+        }
+
+        #scrollToTopBtn:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Scroll to top button -->
+    <button id="scrollToTopBtn">&#8593;</button>
+
+
+
+    <script>
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        window.addEventListener("scroll", () => {
+            // Mostrar o botão de volta ao topo quando a página for rolada para baixo
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        });
+
+        scrollToTopBtn.addEventListener("click", () => {
+            // Rolar suavemente até o topo da página quando o botão for clicado
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            var menu = document.getElementById('navbar-menu');
+            menu.classList.toggle('active');
+        });
+    </script>
+    <header>
+        <div class="headerImg">
+            <a href="./index.html">
+                <img src="./img/LOGO POSITIVA.png" alt="logo" class="logo">
+            </a>
+        </div>
+        <nav>
+            <a href="#sobre_nos">SOBRE NÓS</a>
+            <div class="line"></div>
+
+            <a href="#competidores">COMPETIDORES</a>
+
+            <div class="line"></div>
+            <a href="#noticias">NOTICIAS</a>
+            <div class="line"></div>
+
+            <a href="./login.html">FAZER LOGIN</a>
+        </nav>
+
+
+    </header>
+    <div id="sobre_nos"></div>
+    <div style="overflow: hidden; padding: 5% 13.5% 0%;">
+        <h2 style="margin-bottom: 1rem;">Sobre Nós</h2>
+        <article style="text-align: justify;">Há mais de 65 anos, a <b>WorldSkills</b> reúne jovens qualificados de todo
+            o mundo, selecionados em
+            disputas de educação profissional. Apenas os melhores alunos das Américas, Europa, Ásia e África
+            e Pacífico Sul disputam medalhas em modalidades que correspondem às profissões técnicas da
+            indústria e do comércio. Cada país seleciona apenas um representante, seja uma pessoa ou uma
+            equipe, para cada ocupação. Eles devem ter até 22 anos no ano do torneio e integrar um dos países membros da
+            WorldSkills International. As exceções a essa regra existem
+            nas profissões de Redes de Cabeamento Estruturado, Mecatrônica, Desafio de Construção por
+            Equipes e Manutenção de Aeronaves. Nesses casos, os concorrentes podem ter até 25 anos.
+            O SENAI e Senac são os responsáveis pelas seleções no Brasil. As modalidades são agrupadas em
+            seis setores da indústria e do comércio, totalizando 56 profissões. Pedreiro Arquitetônico, Arte de
+            Jogo 3D Digital, Floricultura, Mecatrônica e Padaria são algumas dessas ocupações.</article>
+    </div>
+    <div id="ocupacoess"></div>
+
+    <div class="ocupacoes " id="ocupacoess">
+        <!-- <h2 style=" z-index: 1;  padding: 5% 13.5% 0%;">Ocupações</h2>
+        <div class="carousel">
+            <div class="carousel-slide">
+                <img src="imagem1.jpg" alt="Imagem 1">
+                <img src="imagem2.jpg" alt="Imagem 2">
+                <img src="imagem3.jpg" alt="Imagem 3">
+            </div>
+            <button class="prev">Anterior</button>
+            <button class="next">Próximo</button>
+        </div> -->
+
+        <style>
+            .carousel {
+                position: relative;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .carousel-slide {
+                display: flex;
+                overflow: hidden;
+            }
+
+            .carousel-slide img {
+                width: 100%;
+                height: auto;
+            }
+
+            button {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: transparent;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .prev {
+                left: 10px;
+            }
+
+            .next {
+                right: 10px;
+            }
+        </style>
+        <script>
+            const carouselSlide = document.querySelector('.carousel-slide');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            const slides = document.querySelectorAll('.carousel-slide img');
+
+            let counter = 0;
+            const size = slides[0].clientWidth;
+
+            function nextSlide() {
+                if (counter >= slides.length - 1) return;
+                counter++;
+                carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+            }
+
+            function prevSlide() {
+                if (counter <= 0) return;
+                counter--;
+                carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+            }
+
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+        </script>
+
+    </div>
+    <div id="competidores"></div>
+
+
+    <div style="padding: 5% 13.5% 0%;">
+        <div class="adasdddsd">
+            <h2 style="padding: 0% 0% 2%;">Competidores da WorldSkills 2023</h2>
+            <img src="./img/repre.png" alt="" style="padding: 0% 0% 1%;">
+            <article>
+                Nesta edição da WorldSkills Competition, um grupo de sete alunos do SENAI da PB compe-
+                tiu em 7 ocupações, como <b>Mecânica Industrial, Desenho Mecânico CAD, Aplicação de
+                    Revestimento Cerâmico, Instalações Elétricas, Tecnologia da Moda e Design Gráfico.</b><br>
+                As competições ocorreram no Rio de Janeiro, São Paulo, no SENAI do Distrito Industrial, em
+                João Pessoa, e também no formato online.
+            </article>
+        </div>
+    </div>
+    <div id="noticias"></div>
+    <div class="sobrenos " id="sobre_nos" style="padding: 5% 13.5% 5%;">
+        <h2 class="">Noticias Recentes</h2>
+        <div class="sobrenos0">
+            <a href="https://www.fiepb.com.br/noticia/alunos-do-senai-premiados-na-wordskills-competition-sao-recebidos-pelo-vice-governador-da-paraiba"
+                target="_blank">
+                <div class="sobrenos1">
+                    <img src="./img/banner.jpeg" alt="">
+                    <div class="bg-sobrenos1">
+                        <p>Alunos do SENAI premiados na WorldSkills Competition são recebidos pelo vice-governador da
+                            Paraíba</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://www.fiepb.com.br/noticia/termina-seletiva-da-worldskills-conheca-os-sete-campeoes"
+                target="_blank">
+                <div class="sobrenos1">
+                    <img src="./img/WhatsApp Image 2023-12-05 at 09.30.42-3.jpeg" alt="">
+
+                    <div class="bg-sobrenos1">
+                        <p>Termina seletiva da WorldSkills! Conheça os sete campeões</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://www.fiepb.com.br/noticia/resultados-do-senai-pb-na-worldskills-competition-comprovam-excelencia-no-ensino-profissional"
+                target="_blank">
+                <div class="sobrenos1">
+                    <img src="./img/WhatsApp Image 2023-12-05 at 09.30.42-4.jpeg" alt="">
+                    <div class="bg-sobrenos1">
+                        <p>Resultados do SENAI PB na WorldSkills Competition comprovam excelência do ensino profissional
+                            ofertado pela instituição</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://www.fiepb.com.br/noticia/competidores-da-paraiba-se-destacam-nas-seletivas-nacionais-da-worldskills"
+                target="_blank">
+                <div class="sobrenos1">
+                    <img src="./img/WhatsApp Image 2023-12-05 at 09.30.42.jpeg" alt="">
+                    <div class="bg-sobrenos1">
+                        <p>Competidores da Paraíba se destacam no ranking Nordeste das seletivas nacionais da
+                            WorldSkills
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <footer>
+        <div class="dasdasdd">
+            <div class="flisdaa">
+                <a href="#sobre_nos">
+                    <p>Sobre Nós</p>
+                </a>
+                <!-- <a href="#ocupacoess">
+                    <p>Ocupações</p>
+                </a> -->
+                <a href="#competidores">
+                    <p>Competidores</p>
+                </a>
+                <a href="https://fiepb.com.br/noticias" target="_blank">
+                    <p>Noticias Recentes</p>
+                </a>
+                <a href="./login.html">
+                    <p>Fazer Login</p>
+                </a>
+            </div>
+            <div class="flisdaa">
+                <a href="">
+                    <p>Siga Nossas</p>
+                </a>
+                <a href="">
+                    <p>Redes Sociais</p>
+                </a>
+                <div class="asssimg">
+                    <img src="./img/300ppi/Ativo 60.png" alt="">
+                    <img src="./img/300ppi/Ativo 58.png" alt="">
+                    <img src="./img/300ppi/Ativo 61.png" alt="">
+                    <img src="./img/300ppi/Ativo 62.png" alt="">
+                </div>
+            </div>
+            <div class="flisdaa">
+                <a href="">
+                    <p>Contato</p>
+                </a>
+                <a href="">
+                    <p>worldkillsparaiba@org.com.br</p>
+                </a>
+                <a href="">
+                    <p>0800 7891 9102</p>
+                </a>
+            </div>
+            <div class="flisdaa">
+                <a href="">
+                    <p>@2023</p>
+                </a>
+                <a href="">
+                    <p>WorldSkills</p>
+                </a>
+                <a href="">
+                    <p>Termos de Uso de</p>
+                </a>
+                <a href="">
+                    <p>Politica e Privacidade</p>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .profile {
+            display: none;
+        }
+
+        ol li {
+            display: none
+        }
+
+        .carousel-cell {
+            width: 90%;
+            height: 500px;
+            border-radius: 5px;
+            counter-increment: carousel-cell;
+        }
+
+        /* cell number */
+        .carousel-cell:before {
+            display: block;
+            text-align: center;
+            line-height: 200px;
+            font-size: 80px;
+            color: white;
+        }
+
+        .carousel-cell {
+            border-radius: 0;
+            margin: 0;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .carousel-cell div {
+            padding: 0 15%;
+        }
+
+        .flickity-button {
+            display: none;
+        }
+
+        @media screen and (max-width: 1520px) {
+            .flisdaa p {
+                font-size: 1rem;
+            }
+
+            .asssimg img {
+                width: 40px;
+            }
+
+            .asssimg {
+                width: 200px;
+            }
+
+            .dasdasdd {
+                padding: 120px 13.5%;
+            }
+        }
+
+        @media screen and (max-width: 1094px) {
+            .flisdaa p {
+                font-size: .9rem;
+            }
+
+            .asssimg img {
+                width: 30px;
+            }
+
+            .asssimg {
+                width: 140px;
+            }
+
+            .flisdaa {
+                height: 6rem;
+            }
+
+            .dasdasdd {
+                padding: 100px 13.5%;
+            }
+        }
+
+        @media screen and (max-width: 886px) {
+
+            .slide {
+                height: 360px;
+            }
+
+
+            .sobrenos0 {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            nav a {
+                font-size: .8rem;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            article,
+            a {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: .7rem;
+            }
+
+            nav {
+                margin-bottom: 1rem;
+                display: flex;
+                justify-content: space-between;
+                width: 560px;
+                position: absolute;
+                z-index: 99;
+                font-size: 1.3rem;
+            }
+
+            .dasdasdd {
+                display: flex;
+                flex-direction: column;
+                height: 500px;
+                padding: 40px 0;
+                align-items: baseline;
+                width: 12.6rem;
+            }
+
+            footer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: 616px) {
+            nav a {
+                font-size: .6rem;
+            }
+
+            nav {
+                width: 320px;
+            }
+        }
+    </style>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

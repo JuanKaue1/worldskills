@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worldskills Paraíba</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/menu.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="menu-btn" id="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <div class="navbar-menu" id="navbar-menu">
+            <a href="./menu.html">Menu da Worldskils</a>
+            <a href="./tec.html">Acessar Resultados</a>
+            <a href="./cal.html">Agenda</a>
+            <a href="./menu2.html">Perfil do Competidor</a>
+            <a href="./index.html">Sair</a>
+        </div>
+    </div>
+    <div class="logo">
+        <a href="./index_login.html">
+            <img id="logo" src="./img/LOGO NEGATIVA.png" alt="">
+        </a>
+    </div>
+    <div class="container">
+        <div id="container_block">
+            <div class="block2">
+                <div id="block2">
+                    <a href="./menu2-1.html">
+                        <img src="./img/300ppi/Ativo 45.png" alt="">
+                        <p>Acessar<br> Resultados</p>
+                    </a>
+                </div>
+                <div id="block2">
+                    <a href="./cal.html">
+                        <img src="./img/300ppi/Ativo 46.png" alt="">
+                        <p>Agenda de<br> Provas e Eventos</p>
+                    </a>
+                </div>
+                <div id="block2">
+                    <a href="./menu3.html">
+                        <img src="./img/300ppi/Ativo 48.png" alt="">
+                        <p>Perfil do<br> Aluno competidor</p>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            var menu = document.getElementById('navbar-menu');
+            menu.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./css/cadastro.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="banner">
+            <img src="./img/logowhite.png" alt="" class="logo">
+        </div>
+        <div class="bg">
+        </div>
+
+        <div class="form" method="post">
+            <h2>CADASTRO</h2>
+            <input type="text" name="nome_do_treinador" placeholder="Nome do Treinador" required>
+            <input type="text" name="nome_do_aluno" placeholder="Nome do Aluno" required>
+            <input type="text" name="ocupacao" list="ocupacao" placeholder="Ocupação" required>
+
+            
+
+            <datalist id="ocupacao" name="ocupacao">
+                <option value="Ocupação">Ocupação</option>
+                <option value="Boston">Boston</option>
+                <option value="Cambridge">Cambridge</option>
+            </datalist>
+
+            <input type="text" name="selecione_sua_unidade" list="selecione_sua_unidade" placeholder="Escolha uma opção"
+                required>
+            <input type="text" name="selecione_sua_unidade" list="selecione_sua_unidade" placeholder="Selecione sua unidade"
+                required>
+
+            <input type="text" name="crie_uma_senha" placeholder="Crie uma senha" required>
+            <a href="./login.html">
+                <input type="submit" value="Realizar Cadastro">
+            </a>
+            <span><a href="./login.html">Não tem cadastro? Login</a></span>
+        </div>
+    </div>
+    <a href="./login.html" class="setas" title="Voltar?">
+        <img src="./img/300ppi/Ativo 49.png" alt="">
+    </a>
+    <style>
+        .setas {
+            position: absolute;
+            z-index: 99;
+            top: 0;
+            right: 0;
+            border: 0;
+            width: 3rem;
+            margin: 3rem 5rem;
+        }
+
+        .setas img {
+            width: 3rem;
+        }
+    </style>
+</body>
+
+</html>
